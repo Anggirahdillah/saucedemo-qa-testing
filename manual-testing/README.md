@@ -1,88 +1,218 @@
-\# Manual Testing
+# Automation Testing - SauceDemo
 
+This folder contains automated test scripts for the SauceDemo web application using Selenium WebDriver and Pytest.
 
+The automation testing project supports functional testing and regression testing by executing repeatable test scenarios automatically.
 
-Folder ini berisi dokumentasi pengujian manual pada aplikasi berbasis web.
+## Objective
 
+The objective of this automation project is to verify important SauceDemo functionality through automated browser testing.
 
+Automation testing helps reduce repetitive manual testing and provides consistent and repeatable test execution.
 
-\## Tujuan
+## Tools and Technologies
 
+| Tool | Purpose |
+|---|---|
+| Python | Programming language |
+| Selenium WebDriver | Browser automation |
+| Pytest | Test framework |
+| Pytest HTML | HTML test report generation |
+| WebDriver Manager | Browser driver management |
+| Git | Version control |
+| GitHub | Source code repository |
 
+## Automated Testing Scope
 
-Pengujian manual dilakukan untuk memastikan fitur aplikasi berjalan sesuai kebutuhan dan menemukan kesalahan pada fungsi, tampilan, maupun alur penggunaan.
+The automated test scenarios include selected SauceDemo functionality, such as:
 
+- Successful login
+- Product selection
+- Add product to cart
+- Shopping cart validation
+- Checkout process
+- Checkout form validation
+- Order completion
+- Logout
 
+## Project Structure
 
-\## Jenis Pengujian
+```text
+automation-testing/
+│
+├── tests/
+│   └── Automated test scripts
+│
+├── reports/
+│   └── Generated test reports
+│
+├── screenshots/
+│   └── Screenshots generated during test execution
+│
+├── conftest.py
+└── README.md
+```
 
+## Prerequisites
 
+Before running the automation tests, make sure the following software is installed:
 
-\- Functional Testing
+- Python 3.x
+- Google Chrome
+- Git
+- Visual Studio Code or another code editor
 
-\- UI Testing
+## Installation
 
-\- Usability Testing
+Open the terminal inside the `automation-testing` folder.
 
-\- Positive Testing
+Create a virtual environment:
 
-\- Negative Testing
+```bash
+python -m venv venv
+```
 
-\- Boundary Testing
+Activate the virtual environment on Windows:
 
+```powershell
+venv\Scripts\activate
+```
 
+Install the required dependencies:
 
-\## Dokumentasi
+```bash
+pip install selenium pytest pytest-html webdriver-manager
+```
 
+## Running the Tests
 
+To run all automated tests:
 
-Dokumentasi pengujian meliputi:
+```bash
+pytest
+```
 
+To run the tests with detailed output:
 
+```bash
+pytest -v
+```
 
-\- Test case
+To run a specific test file:
 
-\- Test scenario
+```bash
+pytest tests/test_login.py -v
+```
 
-\- Expected result
+Replace `test_login.py` with the actual test file name available in the `tests` folder.
 
-\- Actual result
+## Generate HTML Report
 
-\- Status pengujian
+To generate an HTML test report:
 
-\- Screenshot hasil pengujian
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
 
+The generated report will be stored in the `reports` folder.
 
+Example:
 
-\## Tools
+```text
+reports/
+└── report.html
+```
 
+## Screenshot Evidence
 
+Screenshots generated during test execution are stored in the screenshots folder.
 
-\- Figma
+Screenshots may be used as evidence for:
 
-\- Browser
+- Successful test execution
+- Failed test execution
+- Validation errors
+- Unexpected application behavior
+- Debugging test failures
 
-\- Google Sheets atau Microsoft Excel
+## Automation Testing Flow
 
-\- Draw.io jika diperlukan
+```text
+Open Browser
+     ↓
+Open SauceDemo Website
+     ↓
+Execute Test Scenario
+     ↓
+Validate Expected Result
+     ↓
+Capture Screenshot if Necessary
+     ↓
+Close Browser
+     ↓
+Generate Test Report
+```
 
+## Example Test Scenario
 
+### Successful Login
 
-\## Hasil Pengujian
+| Item | Description |
+|---|---|
+| Test Scenario | Verify successful login |
+| Test Data | Valid username and password |
+| Expected Result | User is redirected to the product page |
+| Automation Tool | Selenium WebDriver |
+| Test Framework | Pytest |
 
+## Test Results
 
+The automation test results can be reviewed through:
 
-Hasil pengujian dicatat berdasarkan kesesuaian antara hasil aktual dengan hasil yang diharapkan.
+- Terminal output
+- HTML test report
+- Screenshots generated during execution
 
+Example command:
 
+```bash
+pytest -v
+```
 
-Status pengujian:
+## Benefits of Automation Testing
 
+Automation testing provides several benefits:
 
+- Faster test execution
+- Repeatable testing process
+- Reduced repetitive manual work
+- Improved regression testing
+- Consistent test results
+- Easier defect verification
+- Better testing documentation
 
-\- \*\*PASS\*\*: fitur berjalan sesuai harapan
+## Relationship with Manual Testing
 
-\- \*\*FAIL\*\*: ditemukan ketidaksesuaian atau bug
+The automation testing project complements the manual testing process.
 
-\- \*\*BLOCKED\*\*: pengujian belum dapat dilakukan karena kendala tertentu
+```text
+Manual Test Case
+       ↓
+Manual Test Execution
+       ↓
+Defect Identification
+       ↓
+Bug Reporting in Jira
+       ↓
+Retesting
+       ↓
+Automation Script
+       ↓
+Regression Testing
+```
 
+## Notes
+
+This project uses the SauceDemo demo website for learning and portfolio purposes.
+
+The automation scripts may require updates if the website structure, browser version, or testing environment changes.
